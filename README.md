@@ -37,24 +37,30 @@ In this project I investigate the AirBnB public database to collect findings of 
 - What are the most used criteria to evaluate a property on AirBnB?
 
 # Data Understanding
+- Data extracted using scraping from the Inside AirBnB website (http://insideairbnb.com/get-the-data/).
+- The dataset has a 5.6GB size, containing 106 columns and +1 million rows.
+- Data Dictionary (after cleaning):
+- neighbourhood_cleansed: region inside of a city.
+- property_type: type of building rented (house, apartment, villa etc..).
+- city: location of the listing.
+- price: daily price in local currency.
+- review_scores_rating: Number from 1 to 5 about the listing.
+- number_of_reviews: The number of reviews the listing has.
+- id: unique ID in the database.
+
+# Data preparation
+
+- Code used:
+- Python version 3.9.7
+- Packages: Numpy, Pandas, Seaborn, Matplotlib, Puspark, ProfileReport, Pandasql
+
+# Data Cleansing
+
+- There are over 1 million rows in the database with 106 columns, to make the processing efficient, the number was reduced to 8 columns for the 15 cities with the most listings in the dataset.
+- There are many properties with low numbers of reviews, so as not to harm the price distribution I filtered for properties that have more than 75 reviews, leading to the assumption that these are places that the owners rent constantly.
+- To make the narrative intuitive, we chose a specific city (London) to evaluate the prices and availabilities by property type and neighborhood, thus making it clear what factors are important for a satisfying stay in the future using sentiment analysis.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+# Recommendation
+- With the massive amount of data it was possible to identify the cities with prioprieties where the users of the platform believe they have more and less benefits (Valencia and Amsterdam), so AirBnB should do a campaign to raise the quality of the listings, offering promotions or additional services to keep the recurrence of customers constant.
+- With the sentiment analysis it was possible to locate the themes most used by users and cross-referencing by type and region of the property it will be possible to act precisely where the platform should evaluate the owners and provide measures that negative cases do not occur again.
